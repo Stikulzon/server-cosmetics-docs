@@ -30,7 +30,6 @@ configReload:
     success: '&aConfig successfully reloaded!'
     error: '&cAn error occurred during configs reload!'
 legacyMode: false # If you don't know what it is, you want it to be false
-HMCCosmeticsSupport: true # Adds HMCCosmetics and HMCSkins folder
 ```
 ## cosmeticsGUI.yml
 In cosmeticsGUI you can configure gui names cosmetic slots, color picker colors, permission to open gui and buttons.
