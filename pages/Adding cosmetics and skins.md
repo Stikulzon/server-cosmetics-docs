@@ -5,7 +5,7 @@ Create a YAML file for each cosmetic in the `ServerCosmetics/Cosmetics/` directo
 
 **File: `ServerCosmetics/Cosmetics/cool_hat.yml`**
 ```yaml
-# This is the ID used for the texture (cool_hat.png in Assets/item/)
+# This is the ID used for the texture (cool_hat.png in Assets/textures/)
 cosmetic-item:
   material: minecraft:paper # Base Minecraft item. Required field.
   display-name: "&bCool Hat"         # Item Name. Can be empty, but not recommended.
@@ -30,7 +30,7 @@ Create a YAML file for each item skin in the `ServerCosmetics/ItemSkins/` direct
 
 **File: `ServerCosmetics/ItemSkins/flaming_sword_skin.yml`**
 ```yaml
-# This filename (flaming_sword_skin) is used for the texture (flaming_sword_skin.png in Assets/item/)
+# This filename (flaming_sword_skin) is used for the texture (flaming_sword_skin.png in Assets/textures/)
 material: # Can be a single item or a list of items this skin applies to
   - minecraft:diamond_sword
   - minecraft:netherite_sword
