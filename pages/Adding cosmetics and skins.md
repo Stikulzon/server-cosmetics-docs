@@ -5,20 +5,17 @@ Create a YAML file for each cosmetic in the `ServerCosmetics/Cosmetics/` directo
 
 **File: `ServerCosmetics/Cosmetics/cool_hat.yml`**
 ```yaml
-# This is the ID used for the texture (cool_hat.png in Assets/textures/)
-cosmetic-item:
-  material: minecraft:paper # Base Minecraft item. Required field.
-  display-name: "&bCool Hat"         # Item Name. Can be empty, but not recommended.
-  lore:                              # Item Lore. Can be empty.
-    - "<yellow> very cool hat.</yellow>"
-    - "<blue>Special Edition!"
+material: minecraft:paper # Base Minecraft item. Required field.
+display-name: "&bCool Hat"         # Item Name. Can be empty, but not recommended.
+lore:                              # Item Lore. Can be empty.
+  - "<yellow> very cool hat.</yellow>"
+  - "<blue>Special Edition!"
 permission: "cosmetic.cool_hat" # Permission to use this cosmetic. Required field.
 ```
 
-*   `cosmetic-item`:
-    *   `material` (string): The base Minecraft item ID (e.g., `minecraft:paper`, `minecraft:diamond`). If `minecraft:leather_horse_armor` is used, the cosmetic will be dyeable via the color picker.
-    *   `display-name` (string): The name of the cosmetic. Supports color codes.
-    *   `lore` (list of strings): Description lines for the cosmetic. Supports color codes.
+*   `material` (string): The base Minecraft item ID (e.g., `minecraft:paper`, `minecraft:diamond`). If `minecraft:leather_horse_armor` is used, the cosmetic will be dyeable via the color picker.
+*   `display-name` (string): The name of the cosmetic. Supports color codes.
+*   `lore` (list of strings): Description lines for the cosmetic. Supports color codes.
 *   `permission` (string): The permission node required for a player to equip and use this cosmetic.
 *   **Texture**: The cosmetic will use a texture from `ServerCosmetics/Assets/textures/<filename>.png` (or it's subdirectories). For `cool_hat.yml`, it expects `ServerCosmetics/Assets/textures/cool_hat.png` (or it's subdirectories). Same goes for models.
 
@@ -72,6 +69,51 @@ Models must have a texture path of `servercosmetics:item/<skinid>`, example:
     "0": "servercosmetics:item/cool_hat"
 }
 ```
+
+## Armor cosmetics
+0.2.2+1.21.1 added a new cosmetic type - armor. This page will help you to get used to it.
+
+First, let's create a config for a helmet.
+```yml
+# coolarmor_helmet.yml
+type: HELMET
+display-name: "<blue>Cool Helmet"
+lore:
+  - "Some description"
+
+permission: "cosmetics.armor.coolarmor"
+```
+Overall, there are 4 types for armor: `HELMET`, `CHESTPLATE`, `LEGGINGS` and `BOOTS`. Unlike other cosmetics, you don't need to specify material for armor.
+
+Now, we will add textures:
+`coolarmor_helmet.png`
+`coolarmor_layer_1.png`
+`coolarmor_layer_2.png`
+
+In vanilla, armor has 2 layers (how it looks on a player) and "icons" (how it looks in inventory, dropped etc.) for each armor piece. So you do need to have texture files for layers and an "icon" for each item you configure.
+
+
+The files should be named in format
+`<main name>_<item type>` for item icons and configs and `<main name>_layer_<number>` for armor textures.
+Example of files for a full armor set:
+```
+Textures:
+`coolarmor_helmet.png`
+`coolarmor_chestplate.png`
+`coolarmor_leggings.png`
+`coolarmor_boots.png`
+
+`coolarmor_layer_1.png`
+`coolarmor_layer_2.png`
+
+Configs:
+`coolarmor_helmet.yml`
+`coolarmor_chestplate.yml`
+`coolarmor_leggings.yml`
+`coolarmor_boots.yml`
+```
+
+
 
 ## Polymer autohost
 To setup polymer autohost see **[Official Polymer Documentation](https://polymer.pb4.eu/latest/user/resource-pack-hosting/)**
